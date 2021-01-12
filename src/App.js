@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app">
       <h1>Lets build snapchat</h1>
-      {/* <WebcamCapture /> */}
+      <WebcamCapture />
     </div>
   );
 }
