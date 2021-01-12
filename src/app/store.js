@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import appReducer from "../features/appSlice";
+import camReducer from "../features/camSlice";
 
 export default configureStore({
   reducer: {
-    counter: appReducer,
+    app: appReducer,
+    cam: camReducer,
   },
 });
