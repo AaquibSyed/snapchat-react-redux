@@ -16,5 +16,5 @@ export const camSlice = createSlice({
 });
 
 export const { setImage, resetImage } = camSlice.actions;
-export const selectImage = (state) => state.camSlice.image;
+export const selectImage = (state) => state.camera.image;
 export default camSlice.reducer;

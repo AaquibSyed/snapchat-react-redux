@@ -1,0 +1,50 @@
+.preview {
+  position: relative;
+}
+
+.preview__close {
+  position: absolute;
+  top: 0;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.preview__toolbarRight {
+  position: absolute;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  right: 0;
+}
+
+.preview__toolbarRight > .MuiSvgIcon-root {
+  font-size: 20px !important;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.preview__Footer {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  padding: 7px;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: yellow;
+  border-radius: 30px;
+}
+.preview__Footer > .MuiSvgIcon-root {
+  font-size: 16px !important;
+  cursor: pointer;
+  color: black;
+  margin-left: 2px;
+}
+
+.preview__Footer > h2 {
+  font-size: 8px;
+  margin-right: 3px;
+}
