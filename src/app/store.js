@@ -5,6 +5,6 @@ import camReducer from "../features/camSlice";
 export default configureStore({
   reducer: {
     app: appReducer,
-    cam: camReducer,
+    camera: camReducer,
   },
 });
