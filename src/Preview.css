@@ -31,20 +31,22 @@
   bottom: 0;
   right: 0;
   margin: 10px;
-  padding: 7px;
+  padding: 6px;
   align-items: center;
   justify-content: space-evenly;
   background-color: yellow;
   border-radius: 30px;
+  cursor: pointer;
 }
 .preview__Footer > .MuiSvgIcon-root {
   font-size: 16px !important;
   cursor: pointer;
   color: black;
-  margin-left: 2px;
+  margin-top: 3px;
+  margin-left: 3px;
 }
 
-.preview__Footer > h2 {
-  font-size: 8px;
+.preview__Footer > h3 {
+  font-size: 6px;
   margin-right: 3px;
 }
