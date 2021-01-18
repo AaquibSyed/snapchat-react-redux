@@ -15,11 +15,13 @@ import { v4 as uuid } from "uuid";
 import "./Preview.css";
 import { db, storage } from "./firebase";
 import firebase from "firebase";
+import { selectUSer } from "./features/appSlice";
 
 const Preview = () => {
   const cameraImage = useSelector(selectImage);
   const history = useHistory();
   const dispatch = useDispatch();
+  const user = useSelector(selectUSer);
 
   useEffect(() => {
     if (!cameraImage) {
@@ -54,6 +56,7 @@ const Preview = () => {
               read: false,
               username: "aaquib",
               timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+              profilePic: user.profilePic,
             });
             history.replace("/chats");
           });

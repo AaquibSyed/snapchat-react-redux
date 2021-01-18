@@ -43,6 +43,7 @@
 .chats__bubble {
   padding-right: 0.2rem;
   cursor: pointer;
+  color: white;
 }
 
 .chats__searchIcon {
@@ -63,4 +64,17 @@
 
 .chats__posts::-webkit-scrollbar {
   display: none;
+}
+
+.chats__camButton {
+  position: absolute;
+  background-color: white;
+  color: grey;
+  bottom: 10%;
+  left: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+.chats__camButton:hover {
+  opacity: 0.8;
 }
