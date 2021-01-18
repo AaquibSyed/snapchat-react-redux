@@ -6,12 +6,21 @@ import SearchIcon from "@material-ui/icons/Search";
 import ChatBubbleIcon from "@material-ui/icons/ChatBubble";
 import { auth, db } from "./firebase";
 import Chat from "./Chat";
-import { useSelector } from "react-redux";
-import { selectUSer } from "./features/appSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { resetImage, selectUSer } from "./features/appSlice";
+import RadioButtonUncheckedIcon from "@material-ui/icons/RadioButtonUnchecked";
+import { useHistory } from "react-router-dom";
 
 function Chats() {
   const [posts, setPosts] = useState([]);
   const user = useSelector(selectUSer);
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const goToCam = () => {
+    dispatch(resetImage());
+    history.push("/");
+  };
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
@@ -55,6 +64,13 @@ function Chats() {
             />
           )
         )}
+      </div>
+      <div className="chats__gotoCamera">
+        <RadioButtonUncheckedIcon
+          fontSize="large"
+          className="chats__camButton"
+          onClick={goToCam}
+        />
       </div>
     </div>
   );
