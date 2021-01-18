@@ -13,9 +13,10 @@
 }
 
 .chats__avatar {
-  margin-left: 0.2rem;
-  height: 25px !important;
-  width: 25px !important;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  height: 33px !important;
+  width: 33px !important;
   cursor: pointer;
 }
 
