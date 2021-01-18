@@ -3,9 +3,34 @@ import React from "react";
 import StopIcon from "@material-ui/icons/Stop";
 import "./Chat.css";
 import ReactTimeago from "react-timeago";
-function Chat({ profilePic, username, imageUrl, timestamp, read }) {
+import { useDispatch } from "react-redux";
+import { selectImage } from "./features/appSlice";
+import { useHistory } from "react-router-dom";
+import { db } from "./firebase";
+function Chat({ id, profilePic, username, imageUrl, timestamp, read }) {
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const exit = () => {
+    history.replace("/");
+  };
+
+  const open = () => {
+    if (!read) {
+      dispatch(selectImage(imageUrl));
+      db.collection("posts").doc(id).set(
+        {
+          read: true,
+        },
+        {
+          merge: true,
+        }
+      );
+      history.push("/chats/view");
+    } else exit();
+  };
   return (
-    <div className="chat">
+    <div className="chat" onClick={open}>
       <Avatar src={profilePic} className="chat__avatar" />
       <div className="chat__info">
         <h4>{username}</h4>
