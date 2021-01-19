@@ -1,7 +1,7 @@
 .chats {
   position: relative;
   width: 350px;
-  height: 500px;
+  height: 100%;
 }
 
 .chats__header {
@@ -68,13 +68,15 @@
 
 .chats__camButton {
   position: absolute;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
   color: grey;
-  bottom: 10%;
+  bottom: 2%;
   left: 50%;
   cursor: pointer;
   transform: translate(-50%, -50%);
 }
 .chats__camButton:hover {
+  background-color: rgba(255, 239, 9, 0.178);
+  border-radius: 50%;
   opacity: 0.8;
 }

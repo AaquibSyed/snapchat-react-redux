@@ -42,6 +42,7 @@ function App() {
               alt="snapchat"
               className="app__logo"
             />
+
             <div className="app__body">
               <Switch>
                 <Route path="/preview">
