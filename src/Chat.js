@@ -7,9 +7,15 @@ import { useDispatch } from "react-redux";
 import { selectImage } from "./features/appSlice";
 import { useHistory } from "react-router-dom";
 import { db } from "./firebase";
+import DeleteIcon from "@material-ui/icons/Delete";
+
 function Chat({ id, profilePic, username, imageUrl, timestamp, read }) {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const deleteChat = () => {
+    db.collection("posts").doc(id).delete();
+  };
 
   const open = () => {
     if (!read) {
@@ -37,9 +43,14 @@ function Chat({ id, profilePic, username, imageUrl, timestamp, read }) {
           </p>
         )}
         {read && (
-          <p>
-            Received{" "}
-            <ReactTimeago date={new Date(timestamp?.toDate()).toUTCString()} />
+          <p className="chat__details">
+            <p>
+              Received{" "}
+              <ReactTimeago
+                date={new Date(timestamp?.toDate()).toUTCString()}
+              />
+            </p>
+            <DeleteIcon className="chat__delete" onClick={deleteChat} />
           </p>
         )}
       </div>
