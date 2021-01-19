@@ -26,5 +26,16 @@
 }
 
 .chat__readIcon {
+  transform: translate(-60%, -10%);
   color: red;
+}
+
+.chat__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat__delete {
+  margin-bottom: 0.4rem;
+  transform: translate(-50%, -50%);
 }
